@@ -308,8 +308,8 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:git:https://github.com/JodaOrg/joda-time.git</connection>
-    <developerConnection>scm:git:git@github.com:JodaOrg/joda-time.git</developerConnection>
+    <connection>scm:git:https://github.com/rubelw/joda-time.git</connection>
+    <developerConnection>scm:git:git@github.com:rubelw/joda-time.git</developerConnection>
     <url>https://github.com/JodaOrg/joda-time</url>
     <tag>HEAD</tag>
   </scm>
@@ -820,22 +820,18 @@
   </reporting>
 
   <!-- ==================================================================== -->
-  <distributionManagement>
-    <repository>
-      <id>sonatype-joda-staging</id>
-      <name>Sonatype OSS staging repository</name>
-      <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-      <layout>default</layout>
-    </repository>
-    <snapshotRepository>
-      <uniqueVersion>false</uniqueVersion>
-      <id>sonatype-joda-snapshot</id>
-      <name>Sonatype OSS snapshot repository</name>
-      <url>http://oss.sonatype.org/content/repositories/joda-snapshots</url>
-      <layout>default</layout>
-    </snapshotRepository>
-    <downloadUrl>http://oss.sonatype.org/content/repositories/joda-releases</downloadUrl>
-  </distributionManagement>
+    <distributionManagement>
+      <repository>
+         <id>releases</id>
+         <name>Releases</name>
+         <url>http://127.0.0.1:8081/nexus/content/repositories/releases/</url>
+      </repository>
+      <snapshotRepository>
+         <id>snapshots</id>
+         <name>Snapshot Releases</name>
+         <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
+      </snapshotRepository>
+    </distributionManagement>
 
   <!-- ==================================================================== -->
   <profiles>
