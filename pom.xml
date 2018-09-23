@@ -936,13 +936,19 @@
           <plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>${nexus-staging-maven-plugin.version}</version>
+            <version>1.1</version>
             <extensions>true</extensions>
             <configuration>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <serverId>sonatype-joda-staging</serverId>
-              <description>Releasing ${project.groupId}:${project.artifactId}:${project.version}</description>
-              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+              <serverId>local-nexus</serverId>
+              <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+              <!-- Profile Id override profile matching -->
+              <!--stagingProfileId></stagingProfileId-->
+              <!-- By having none of those above, we actually use Staging V2 in "auto" mode, profile will be matched server side -->
+              <!-- Tags -->
+              <tags>
+                <localUsername>${env.USER}</localUsername>
+                <javaVersion>${java.version}</javaVersion>
+              </tags>
             </configuration>
           </plugin>
         </plugins>
